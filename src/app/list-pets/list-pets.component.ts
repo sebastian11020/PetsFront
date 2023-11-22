@@ -7,7 +7,7 @@ import {PetService} from "../pet.service";
 @Component({
   selector: 'app-list-pets',
   templateUrl: './list-pets.component.html',
-  styleUrls: ['./list-pets.component.css'] // Corregir el nombre de la propiedad a styleUrls
+  styleUrls: ['./list-pets.component.css']
 })
 export class ListPetsComponent {
   pets: Pets[];
@@ -15,10 +15,17 @@ export class ListPetsComponent {
   constructor(private petService:PetService,private router:Router) { }
 
   ngOnInit(): void {
-    this.pets = [
-      { id: 1, name: "luna", category: "Gato" ,status:"Disponible"},
-      { id: 2, name: "Sol", category: "Perro",status:"Disponible" }
-    ];
+    this.getPets();
+  }
+  private getPets(){
+    this.petService.getListOfPets().subscribe(dato=>{
+      this.pets=dato;
+    });
+  }
+  eliminarMascota(id:number){
+    this.petService.eliminarMascota(id).subscribe(dato =>{
+      this.getPets();
+    });
   }
 
   actualizarPet(id:number){

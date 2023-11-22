@@ -1,13 +1,14 @@
 <div class="col-md-6 offset-md-3">
     <h3 class="text-center">Registro de Mascota</h3>
-    <form (ngSubmit)="onSumbit()"></form>
+    <form (ngSubmit)="onSumbit()">
     <div class="form-group">
         <label>Nombre</label>
         <input type="text" class="form-control" id="name" [(ngModel)] = "pet.name" name="nombre">
         <label>Categoria</label>
         <input type="text" class="form-control" id="category" [(ngModel)] = "pet.category" name="category">
         <label>Estado</label>
-        <input type="text" class="form-control" id="estado" [(ngModel)] = "pet.name" name="estado">
+        <input type="text" class="form-control" id="estado" [(ngModel)] = "pet.status" name="estado">
     </div>
     <button class="btn btn-success">Guardar</button>
+    </form>
 </div>
