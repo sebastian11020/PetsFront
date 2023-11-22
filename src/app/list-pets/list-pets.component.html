@@ -1,0 +1,19 @@
+<h2>Mascotas</h2>
+<table class="table table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Categoria</th>
+      <th>Estado</th>
+    </tr>
+  </thead>
+  <tbody>
+   <tr *ngFor="let pet of pets">
+     <td>{{pet.id}}</td>
+     <td>{{pet.name}}</td>
+     <td>{{pet.category}}</td>
+     <td>{{pet.status}}</td>
+   </tr>
+  </tbody>
+</table>
