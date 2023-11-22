@@ -8,12 +8,14 @@ import { ListPetsComponent } from './list-pets/list-pets.component';
 import {RegistrarPetComponent} from "./registrar-pet/registrar-pet.component";
 import {FormsModule} from "@angular/forms";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { GetByIdPetComponent } from './get-by-id-pet/get-by-id-pet.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         ListPetsComponent,
-        RegistrarPetComponent
+        RegistrarPetComponent,
+        GetByIdPetComponent
     ],
     imports: [
         BrowserModule,

@@ -7,9 +7,16 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class PetService {
+
   private url:string="http://localhost:8080/api/v1/pets";
+
   constructor(private httpClient:HttpClient) { }
+
   registrarMascota(pet:Pets):Observable<object>{
     return this.httpClient.post('${this.httpClient}',pet);
+  }
+
+  obtenerMascota(id:number):Observable<Pets>{
+    return this.httpClient.get<Pets>(`${this.url}/${id}`);
   }
 }
