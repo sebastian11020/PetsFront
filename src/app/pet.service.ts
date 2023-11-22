@@ -19,7 +19,8 @@ export class PetService {
     return this.httpClient.post(this.url, pet);
   }
 
-  eliminarMascota(id:number): Observable<object>{
-    return this.httpClient.delete(this.url);
+  eliminarMascota(id: number): Observable<object> {
+    const deleteUrl = `${this.url}/${id}`;
+    return this.httpClient.delete(deleteUrl);
   }
 }
