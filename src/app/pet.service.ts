@@ -12,4 +12,12 @@ export class PetService {
   registrarMascota(pet:Pets):Observable<object>{
     return this.httpClient.post('${this.httpClient}',pet);
   }
+
+  actualizarMascota(id:number,pet:Pets) : Observable<Object>{
+    return this.httpClient.put('${this.httpClient}/${id}',pet);
+  }
+
+  obtenerMascotaPorId(id:number):Observable<object>{
+    return this.httpClient.get<Pets>('${this.httpClient}/${id}');
+  }
 }

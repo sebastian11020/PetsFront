@@ -14,6 +14,10 @@
      <td>{{pet.name}}</td>
      <td>{{pet.category}}</td>
      <td>{{pet.status}}</td>
+
+     <td>
+       <button (click)= "actualizarPet(pet.id)" class="btn btn-info">Editar</button>
+     </td>
    </tr>
   </tbody>
 </table>

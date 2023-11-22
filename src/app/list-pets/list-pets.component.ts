@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Pets } from "../pets";
+import { Router } from '@angular/router';
+import {PetService} from "../pet.service";
 
 @Component({
   selector: 'app-list-pets',
@@ -10,7 +12,7 @@ import { Pets } from "../pets";
 export class ListPetsComponent {
   pets: Pets[];
 
-  constructor() {}
+  constructor(private petService:PetService,private router:Router) { }
 
   ngOnInit(): void {
     this.pets = [
@@ -18,4 +20,11 @@ export class ListPetsComponent {
       { id: 2, name: "Sol", category: "Perro",status:"Disponible" }
     ];
   }
+
+  actualizarPet(id:number){
+    this.router.navigate(['actualizar-pet',id]);
+  }
+
+
+
 }
