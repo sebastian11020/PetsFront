@@ -18,4 +18,8 @@ export class PetService {
   registrarMascota(pet: Pets): Observable<object> {
     return this.httpClient.post(this.url, pet);
   }
+
+  eliminarMascota(id:number): Observable<object>{
+    return this.httpClient.delete(this.url);
+  }
 }

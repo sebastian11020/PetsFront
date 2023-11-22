@@ -21,4 +21,9 @@ export class ListPetsComponent {
       this.pets=dato;
     });
   }
+  eliminarMascota(id:number){
+    this.petService.eliminarMascota(id).subscribe(dato =>{
+      this.getPets();
+    });
+  }
 }
